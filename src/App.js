@@ -1,8 +1,14 @@
-import { Component } from "react";
+import { Component, Fragment } from "react";
 import Header from "./components/Header";
+import MasonryGrid from "./components/Masonry";
 
 export default class App extends Component {
   render() {
-    return <Header/>
+    return (
+      <Fragment>
+        <Header /> 
+        <MasonryGrid />
+      </Fragment>
+    )
   }
 }

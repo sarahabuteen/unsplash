@@ -4,7 +4,7 @@ import { MdSearch } from 'react-icons/md';
 const Header = () => {
   return (
     <Fragment>
-      <header className="fixed-top">
+      <header>
         <div className="container-fluid">
           <div className="row d-flex align-items-center">
             <div className="col-md-3">
