@@ -1,7 +1,12 @@
 const mongoose = require('mongoose');
 const express = require("express");
-const app = express();
+const bodyParser = require("body-parser");
 require("dotenv").config();
+
+// import routes
+const photoRoutes = require("./routes/photo");
+
+const app = express();
 
 //db connection
 mongoose.connect(
@@ -17,10 +22,14 @@ mongoose.connection.on('error', err => {
     console.log(`DB connection error: ${err.message}`)
 });
 
+// middlewares
+app.use(bodyParser.json());
+
+// routes middleware
+app.use("/api", photoRoutes);
 
 const port = process.env.PORT || 8000;
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
-
