@@ -1,0 +1,13 @@
+/**
+ * Basic typography style for text
+ */
+
+#root,
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: $default-font-family;
+}

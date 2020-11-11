@@ -1,0 +1,20 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Regular font family
+/// @type List
+$default-font-family: 'Noto Sans', sans-serif !default;
+
+/// Colors
+/// @type Color
+$black-color: #000000 !default;
+$white-color: #ffffff !default;
+$green-color: #3DB46D !default;
+$red-color: #EB5757 !default;
+$dark-gray: #4F4F4F !default;
+$light-gray: #BDBDBD !default;
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+$base-url: "/assets/" !default;
