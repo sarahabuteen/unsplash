@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 require("dotenv").config();
 
 // import routes
@@ -24,6 +25,7 @@ mongoose.connection.on('error', err => {
 
 // middlewares
 app.use(bodyParser.json());
+app.use(cors());
 
 // routes middleware
 app.use("/api", photoRoutes);
