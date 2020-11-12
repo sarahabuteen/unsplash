@@ -16,43 +16,14 @@ exports.photoById = (req, res, next, id) => {
 };
 
 exports.create = (req, res) => {
-    let form = new formidable.IncomingForm();
-    form.keepExtensions = true;
-    form.parse(req, (err, fields, files) => {
+    const photo = new Photo(req.body);
+    photo.save((err, data) => {
         if (err) {
             return res.status(400).json({
-                error: 'Photo could not be uploaded'
+                error: errorHandler(err)
             });
         }
-
-        const { label } = fields;
-
-        if (!label) {
-            return res.status(400).json({
-                error: 'All fields are required'
-            });
-        }
-
-        let photo = new Photo(fields);
-
-        if (files.url) {
-            if (files.url.size > 1000000) {
-                return res.status(400).json({
-                    error: 'Photo size should be less than 1mb'
-                });
-            }
-            photo.url.data = fs.readFileSync(files.url.path);
-            photo.url.contentType = files.url.type;
-        }
-
-        photo.save((err, result) => {
-            if (err) {
-                return res.status(400).json({
-                    error: errorHandler(err)
-                });
-            }
-            res.json(result);
-        });
+        res.json({ data });
     });
 };
 
