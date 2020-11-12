@@ -1,15 +1,11 @@
 import { Component, Fragment } from "react";
-import AddPhoto from "./components/AddPhoto";
-import Header from "./components/Header";
-import MasonryGrid from "./components/Masonry";
+import Home from "./pages/Home";
 
 export default class App extends Component {
   render() {
     return (
       <Fragment>
-        <Header /> 
-        <MasonryGrid />
-        <AddPhoto />
+        <Home />
       </Fragment>
     )
   }

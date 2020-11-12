@@ -1,0 +1,38 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the form components.
+// -----------------------------------------------------------------------------
+
+.form-control:focus,
+.form-control:focus,
+.form-control:hover {
+  outline: 0;
+  box-shadow: none;
+  border-color: $dark-gray;
+}
+
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus,
+button.active.focus,
+button.active:focus,
+button.focus,
+button:active.focus,
+button:active:focus,
+button:focus,
+[role="button"]:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+a, .btn-link {
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: none;
+      color: inherit;
+      outline: none;
+    }
+}
